@@ -13,5 +13,5 @@ In this HW, we will implement an algorithm to predict the operating reserve (備
 ## 資料前處理
 將檔案讀取後，將格式統一並進行合併，去除掉不需要的欄位，透過關係圖得知，每年夏季跟春秋季的備轉容量有顯著差異，而我們要預測3/30-4/13的台電備轉容量，因此我只使用了2019-2022年中每年的1-4月做模型的訓練。
 
-## 模型
-有測試過的模型包含LSTM、ARIMA、以及Prophet 三種模型，LSTM以及ARIMA經測試後的效果不佳，因此最後採用FACEBOOK所開發的Prophet model作為訓練模型，
+## 程式執行
+有測試過的模型包含LSTM、ARIMA、以及Prophet 三種模型，LSTM以及ARIMA經測試後的效果不佳，因此最後採用FACEBOOK所開發的Prophet model作為訓練模型，程式直接執行hw1_Prophet.ipynb即可，結果會輸出到answer.csv。
