@@ -32,7 +32,7 @@ from matplotlib import pyplot
 
 #讀取近三年每日轉備容量(2019-2021)
 data = pd.read_csv('近三年每日尖峰備轉容量率.csv')
-data['日期'] = pd.to_datetime(data['日期'], format = "%Y/%m/%d")1
+data['日期'] = pd.to_datetime(data['日期'], format = "%Y/%m/%d")
 data.rename(columns = {'日期': 'ds', '備轉容量(MW)': 'y', '備轉容量率(%)': 'transferCapacity'}, inplace = True)
 #data.set_index(['Adj Close'], inplace = True)
 data.iloc[:,1] = data.iloc[:,1] * 10
