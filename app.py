@@ -31,7 +31,7 @@ from matplotlib import pyplot
 # drive.mount('/content/drive')
 
 #讀取近三年每日轉備容量(2019-2021)
-data = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/data_mining/hw1/近三年每日尖峰備轉容量率.csv')
+data = pd.read_csv('近三年每日尖峰備轉容量率.csv')
 data['日期'] = pd.to_datetime(data['日期'], format = "%Y/%m/%d")1
 data.rename(columns = {'日期': 'ds', '備轉容量(MW)': 'y', '備轉容量率(%)': 'transferCapacity'}, inplace = True)
 #data.set_index(['Adj Close'], inplace = True)
@@ -40,7 +40,7 @@ data = data[['ds', 'y']]
 data.head()
 
 #讀取2022年轉備容量
-data2 = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/data_mining/hw1/本年度每日尖峰備轉容量率.csv')
+data2 = pd.read_csv('本年度每日尖峰備轉容量率.csv')
 data2['日期'] = pd.to_datetime(data2['日期'], format = "%Y/%m/%d")
 data2.rename(columns = {'日期': 'ds', '備轉容量(萬瓩)': 'y', '備轉容量率(%)': 'transferCapacity'}, inplace = True)
 #data2.set_index(['Adj Close'], inplace = True)
@@ -110,5 +110,5 @@ answer.rename(columns = {'ds': 'date', 'yhat': 'operating_reserve(MW)'}, inplace
 answer.set_index('date')
 for i in range(len(answer)):
   answer.iloc[i,0] = answer.iloc[i,0].strftime('%Y%m%d')
-answer.to_csv('/content/drive/MyDrive/Colab Notebooks/data_mining/hw1/submission.csv',index=False)
+answer.to_csv('submission.csv',index=False)
 #answer
